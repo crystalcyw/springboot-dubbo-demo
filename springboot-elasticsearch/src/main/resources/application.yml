@@ -1,0 +1,9 @@
+server:
+  port: 8083
+
+spring:
+  elasticsearch:
+    jest:
+      uris: 127.0.0.1:9200
+    indies: document
+    type: document
