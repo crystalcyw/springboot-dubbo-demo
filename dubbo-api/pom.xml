@@ -17,5 +17,10 @@
             <artifactId>dubbo-common</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.robert</groupId>
+            <artifactId>dubbo-provider</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 </project>
