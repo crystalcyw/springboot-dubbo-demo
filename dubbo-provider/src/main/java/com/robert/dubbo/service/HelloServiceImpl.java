@@ -1,16 +1,20 @@
 package com.robert.dubbo.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import org.springframework.stereotype.Component;
 
 /**
  * @author changyuwei
  * @date 2019-09-11
  */
-@Service
-public class HelloServiceImpl implements HelloService {
+@Service(interfaceClass = IHelloService.class)
+@Component
+public class HelloServiceImpl implements IHelloService {
 
     @Override
-    public void sayHello() {
-        System.out.println("Hello world!");
+    public String sayHello(String name) {
+        System.out.println("Hello world!" + name);
+
+        return "say Hello to " + name;
     }
 }

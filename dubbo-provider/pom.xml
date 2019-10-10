@@ -33,9 +33,14 @@
             <artifactId>dubbo-spring-boot-starter</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.101tec</groupId>
+            <artifactId>zkclient</artifactId>
+        </dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+<!--   mybatis-plus与mybatis依赖冲突，这里注释掉     -->
 <!--        <dependency>-->
 <!--            <groupId>org.mybatis.spring.boot</groupId>-->
 <!--            <artifactId>mybatis-spring-boot-starter</artifactId>-->
@@ -55,10 +60,10 @@
             <artifactId>dubbo-api</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.robert</groupId>
-            <artifactId>dubbo-common</artifactId>
-            <version>${project.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.robert</groupId>-->
+<!--            <artifactId>dubbo-common</artifactId>-->
+<!--            <version>${project.version}</version>-->
+<!--        </dependency>-->
     </dependencies>
 </project>

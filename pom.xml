@@ -28,9 +28,10 @@
         <java.version>1.8</java.version>
         <springboot.version>2.1.8.RELEASE</springboot.version>
         <guava.version>18.0</guava.version>
+        <fasterxml.version>2.9.9.3</fasterxml.version>
         <hutool.version>4.6.3</hutool.version>
         <lombok.version>1.18.8</lombok.version>
-        <zookeeper.version>3.5.5</zookeeper.version>
+        <zookeeper.version>3.4.6</zookeeper.version>
         <zkClient.version>0.10</zkClient.version>
         <curator.version>2.11.1</curator.version>
     </properties>
@@ -99,6 +100,12 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
+            </dependency>
+            <!--  fasterxml  -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${fasterxml.version}</version>
             </dependency>
             <!-- hutool工具类 -->
             <dependency>

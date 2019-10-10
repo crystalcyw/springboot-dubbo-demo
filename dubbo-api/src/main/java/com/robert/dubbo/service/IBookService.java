@@ -4,7 +4,19 @@ import com.robert.dubbo.entity.Book;
 
 public interface IBookService {
 
-    String pringBookName(String name);
+    /**
+     * 打印书名
+     *
+     * @param name 书名
+     * @return
+     */
+    String printBookName(String name);
 
+    /**
+     * 主键查询
+     *
+     * @param id 主键
+     * @return
+     */
     Book getById(Long id);
 }

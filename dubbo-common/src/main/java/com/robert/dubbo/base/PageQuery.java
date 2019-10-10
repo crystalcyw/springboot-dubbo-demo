@@ -3,9 +3,9 @@ package com.robert.dubbo.base;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+//import org.springframework.data.domain.PageRequest;
+//import org.springframework.data.domain.Pageable;
+//import org.springframework.data.domain.Sort;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;
@@ -50,35 +50,35 @@ public class PageQuery {
         this.sortFields = sortFields;
     }
 
-    @JsonIgnore
-    public Pageable getPageable() {
-        List<Sort.Order> orders = Lists.newArrayList();
-        if (sortFields != null && sortFields.length > 0) {
-            for (int i = 0; i < sortFields.length; i++) {
-                orders.add(new Sort.Order(_getDirection(i), sortFields[i][0]));
-            }
-        }
-        if (CollectionUtils.isEmpty(orders)) {
-            return new PageRequest(page - 1, rows);
-        } else {
-            return new PageRequest(page - 1, rows, new Sort(orders));
-        }
-    }
-
-    @JsonIgnore
-    public Sort getSort() {
-        List<Sort.Order> orders = Lists.newArrayList();
-        if (sortFields != null && sortFields.length > 0) {
-            for (int i = 0; i < sortFields.length; i++) {
-                orders.add(new Sort.Order(_getDirection(i), sortFields[i][0]));
-            }
-        }
-        if (CollectionUtils.isEmpty(orders)) {
-            return null;
-        } else {
-            return new Sort(orders);
-        }
-    }
+//    @JsonIgnore
+//    public Pageable getPageable() {
+//        List<Sort.Order> orders = Lists.newArrayList();
+//        if (sortFields != null && sortFields.length > 0) {
+//            for (int i = 0; i < sortFields.length; i++) {
+//                orders.add(new Sort.Order(_getDirection(i), sortFields[i][0]));
+//            }
+//        }
+//        if (CollectionUtils.isEmpty(orders)) {
+//            return new PageRequest(page - 1, rows);
+//        } else {
+//            return new PageRequest(page - 1, rows, new Sort(orders));
+//        }
+//    }
+//
+//    @JsonIgnore
+//    public Sort getSort() {
+//        List<Sort.Order> orders = Lists.newArrayList();
+//        if (sortFields != null && sortFields.length > 0) {
+//            for (int i = 0; i < sortFields.length; i++) {
+//                orders.add(new Sort.Order(_getDirection(i), sortFields[i][0]));
+//            }
+//        }
+//        if (CollectionUtils.isEmpty(orders)) {
+//            return null;
+//        } else {
+//            return new Sort(orders);
+//        }
+//    }
 
     @JsonIgnore
     public String getOrder$By() {
@@ -112,11 +112,11 @@ public class PageQuery {
         }
     }
 
-    private Sort.Direction _getDirection(int i) {
-        if (StringUtils.equalsIgnoreCase(PageQuery.DESC, sortFields[i][1])) {
-            return Sort.Direction.DESC;
-        } else {
-            return Sort.Direction.ASC;
-        }
-    }
+//    private Sort.Direction _getDirection(int i) {
+//        if (StringUtils.equalsIgnoreCase(PageQuery.DESC, sortFields[i][1])) {
+//            return Sort.Direction.DESC;
+//        } else {
+//            return Sort.Direction.ASC;
+//        }
+//    }
 }

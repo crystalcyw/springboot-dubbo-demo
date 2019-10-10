@@ -3,14 +3,14 @@ package com.robert.dubbo.config;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.robert.dubbo.base.ApplicationContextHolder;
+import com.robert.dubbo.spring.ApplicationContextHolder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
-import org.springframework.data.redis.serializer.StringRedisSerializer;
+//import org.springframework.data.redis.connection.RedisConnectionFactory;
+//import org.springframework.data.redis.core.RedisTemplate;
+//import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
+//import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * @author changyuwei
@@ -28,17 +28,17 @@ public class Config {
         return objectMapper;
     }
 
-    @Primary
-    @Bean
-    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory) {
-        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
-        redisTemplate.setConnectionFactory(connectionFactory);
-        redisTemplate.setKeySerializer(new StringRedisSerializer());
-        redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
-        redisTemplate.setHashKeySerializer(new StringRedisSerializer());
-        redisTemplate.setHashValueSerializer(new GenericJackson2JsonRedisSerializer());
-        return redisTemplate;
-    }
+//    @Primary
+//    @Bean
+//    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory) {
+//        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+//        redisTemplate.setConnectionFactory(connectionFactory);
+//        redisTemplate.setKeySerializer(new StringRedisSerializer());
+//        redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
+//        redisTemplate.setHashKeySerializer(new StringRedisSerializer());
+//        redisTemplate.setHashValueSerializer(new GenericJackson2JsonRedisSerializer());
+//        return redisTemplate;
+//    }
 
     @Bean
     public ApplicationContextHolder applicationContextHolder() {

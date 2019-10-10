@@ -6,7 +6,7 @@ import lombok.Data;
 
 import java.util.List;
 import java.util.function.Function;
-import org.springframework.data.domain.Page;
+//import org.springframework.data.domain.Page;
 
 import static java.util.stream.Collectors.toList;
 
@@ -63,23 +63,23 @@ public class PageResponse<T> extends BaseBean{
         }
     }
 
-    public PageResponse(Page<T> page) {
-        this.rows = page.getSize();
-        this.total = page.getTotalElements();
-        this.page = page.getNumber();
-        if (page.getContent() != null) {
-            this.list = page.getContent();
-        }
-    }
-
-    public <S> PageResponse(Page<S> page, Function<S, T> mapper) {
-        this.rows = page.getSize();
-        this.total = page.getTotalElements();
-        this.page = page.getNumber();
-        if (page.getContent() != null) {
-            this.list = page.getContent().stream().map(mapper).collect(toList());
-        }
-    }
+//    public PageResponse(Page<T> page) {
+//        this.rows = page.getSize();
+//        this.total = page.getTotalElements();
+//        this.page = page.getNumber();
+//        if (page.getContent() != null) {
+//            this.list = page.getContent();
+//        }
+//    }
+//
+//    public <S> PageResponse(Page<S> page, Function<S, T> mapper) {
+//        this.rows = page.getSize();
+//        this.total = page.getTotalElements();
+//        this.page = page.getNumber();
+//        if (page.getContent() != null) {
+//            this.list = page.getContent().stream().map(mapper).collect(toList());
+//        }
+//    }
 
     public <R> PageResponse<R> convert(Function<T, R> mapper) {
         PageResponse<R> pageResponse = new PageResponse<>();

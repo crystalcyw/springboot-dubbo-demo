@@ -1,15 +1,11 @@
 package com.robert.dubbo.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.alibaba.dubbo.rpc.cluster.loadbalance.RoundRobinLoadBalance;
 import com.robert.dubbo.aop.ResponseResult;
 import com.robert.dubbo.base.ResponseEntity;
 import com.robert.dubbo.entity.Book;
 import com.robert.dubbo.service.IBookService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author changyuwei
@@ -20,18 +16,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/book")
 public class BookController {
 
-    @Reference(loadbalance = RoundRobinLoadBalance.NAME)
+    @Reference
     IBookService bookService;
 
     @GetMapping("/name")
-    public ResponseEntity getBookName(String name) {
-        String bookName = this.bookService.pringBookName(name);
+    public ResponseEntity getBookName(@RequestParam(defaultValue = "三国演义") String name) {
+        String bookName = this.bookService.printBookName(name);
         return ResponseEntity.OK(bookName);
     }
 
     @GetMapping("/{id}")
-    public Book getById(@PathVariable Long id) {
+    public ResponseEntity getById(@PathVariable Long id) {
         Book book = this.bookService.getById(id);
-        return book;
+        return ResponseEntity.OK(book);
     }
 }

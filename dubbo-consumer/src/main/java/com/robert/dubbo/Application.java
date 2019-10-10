@@ -17,12 +17,12 @@ public class Application {
 
     public static void main(String[] args) {
 
-        log.info("Dubbo api 开始启动。。。");
+        log.info("Dubbo consumer 开始启动。。。");
 
         SpringApplication app = new SpringApplication(Application.class);
         app.setBannerMode(Banner.Mode.OFF);
         app.run(args);
 
-        log.info("Dubbo api 启动成功。。。");
+        log.info("Dubbo consumer 启动成功。。。");
     }
 }

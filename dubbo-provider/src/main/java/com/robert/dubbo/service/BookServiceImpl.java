@@ -3,6 +3,7 @@ package com.robert.dubbo.service;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.robert.dubbo.entity.Book;
 import com.robert.dubbo.mapper.BookMapper;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
@@ -11,16 +12,17 @@ import javax.annotation.Resource;
  * @date 2019-09-10
  */
 
-@Service
+@Service(interfaceClass = IBookService.class)
+@Component
 public class BookServiceImpl implements IBookService {
 
     @Resource
     public BookMapper bookMapper;
 
     @Override
-    public String pringBookName(String name) {
+    public String printBookName(String name) {
         System.out.println(name);
-        return name;
+        return "book name " + name;
     }
 
     @Override

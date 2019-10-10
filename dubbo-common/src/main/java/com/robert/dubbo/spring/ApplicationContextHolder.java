@@ -1,4 +1,4 @@
-package com.robert.dubbo.base;
+package com.robert.dubbo.spring;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
