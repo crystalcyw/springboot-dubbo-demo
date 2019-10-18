@@ -1,0 +1,31 @@
+server:
+  port: 8002
+  servlet:
+    context-path: /
+
+spring:
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    ## 生产者配置
+    producer:
+      retries: 3
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    ## 消费者配置
+    consumer:
+      ## 组
+      group-id: mq-kafka-test
+      ## 关闭自动提交
+      enable-auto-commit: false
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        session.timeout.ms: 6000
+    listener:
+      log-container-config: false
+      concurrency: 5
+      ## 手动提交
+      ack-mode: manual_immediate
