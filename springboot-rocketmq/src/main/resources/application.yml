@@ -1,0 +1,28 @@
+server:
+  port: 8004
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+  access-channel: LOCAL
+  ## 配置生产者
+  producer:
+    group: test-rocketmq-group
+    ## Millis of send message timeout.
+    send-message-timeout: 3000
+    ## Compress message body threshold, namely, message body larger than 4k will be compressed on default.
+    compress-message-body-threshold: 4096
+    ## Maximum allowed message size in bytes.
+    max-message-size: 4194304
+    ## 发送异步消息失败重试次数
+    retry-times-when-send-async-failed: 0
+    ## Indicate whether to retry another broker on sending failure internally.
+    retry-next-server: true
+    ## 消息发送失败重试次数
+    retry-times-when-send-failed: 2
+
+  ## 配置消费者
+  consumer:
+    group: test-rocketmq-group
+    enable-msg-trace: true
+    customized-trace-topic: test-trace-topic
+

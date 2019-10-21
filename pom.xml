@@ -14,6 +14,8 @@
         <module>dubbo-api</module>
         <module>springboot-elasticsearch</module>
         <module>dubbo-common</module>
+      <module>springboot-rocketmq</module>
+      <module>spring-boot-demo-poi</module>
     </modules>
 
     <parent>
