@@ -57,13 +57,8 @@
         </dependency>
         <dependency>
             <groupId>com.robert</groupId>
-            <artifactId>dubbo-api</artifactId>
+            <artifactId>dubbo-common</artifactId>
             <version>${project.version}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.robert</groupId>-->
-<!--            <artifactId>dubbo-common</artifactId>-->
-<!--            <version>${project.version}</version>-->
-<!--        </dependency>-->
     </dependencies>
 </project>

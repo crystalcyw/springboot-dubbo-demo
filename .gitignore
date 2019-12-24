@@ -1,3 +1,6 @@
 # Intelij IDEA
 *.iml
 .idea/
+target
+out
+.gitignore
