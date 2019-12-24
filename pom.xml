@@ -16,6 +16,7 @@
         <module>dubbo-common</module>
         <module>springboot-rocketmq</module>
         <module>springboot-poi</module>
+        <module>springboot-validation</module>
     </modules>
 
     <parent>
