@@ -29,7 +29,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <springboot.version>2.1.8.RELEASE</springboot.version>
+        <springboot.version>2.5.12</springboot.version>
         <dubbo-spring-starter.version>2.0.0</dubbo-spring-starter.version>
         <guava.version>18.0</guava.version>
         <fasterxml.version>2.9.10.1</fasterxml.version>
