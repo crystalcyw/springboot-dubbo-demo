@@ -32,7 +32,7 @@
         <springboot.version>2.1.8.RELEASE</springboot.version>
         <dubbo-spring-starter.version>2.0.0</dubbo-spring-starter.version>
         <guava.version>18.0</guava.version>
-        <fasterxml.version>2.9.10.1</fasterxml.version>
+        <fasterxml.version>2.12.7.1</fasterxml.version>
         <hutool.version>4.6.3</hutool.version>
         <lombok.version>1.18.8</lombok.version>
         <zookeeper.version>3.5.5</zookeeper.version>
